@@ -11,8 +11,9 @@ trait Omer
      */
     public function getOmerCount()
     {
-        $count = $this->diffInDays(
-            static::firstDayOfPesach($this->jewishYear)
+        $count = (int) $this->diffInDays(
+            static::firstDayOfPesach($this->jewishYear),
+            true
         );
 
         return $count > 0 && $count < 50 ? $count : null;

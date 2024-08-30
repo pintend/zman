@@ -72,7 +72,7 @@ trait Parsha
         // Until Adar everything goes in order
         // If it is a regular year the 4 are doubled
         $offset = 0;
-        $shabbos = $this->diffInWeeks($shabbosBereishis->addDay()) + 1;
+        $shabbos = (int) $this->diffInWeeks($shabbosBereishis->addDay(), true) + 1;
 
         $p = static::firstDayOfPesach($this->jewishYear);
         if ($this->gt($p)) {
@@ -83,7 +83,7 @@ trait Parsha
         if (!$this->isJewishLeapYear()) {
             $firstDayOfPesach = self::firstDayOfPesach($this->jewishYear, $galus);
             $shabbosHagadol = $firstDayOfPesach->copy()->subWeek()->addDays(6 - $firstDayOfPesach->dayOfWeek);
-            $weeksBetweenShabbosBereishisAndShabbosHagadol = $shabbosHagadol->diffInWeeks($shabbosBereishis);
+            $weeksBetweenShabbosBereishisAndShabbosHagadol = (int) $shabbosHagadol->diffInWeeks($shabbosBereishis, true);
 
             $offset += $shabbos > 21 && $weeksBetweenShabbosBereishisAndShabbosHagadol < 23 ? 1 : 0;
             $offset += $shabbos >= 27 ? 1 : 0;

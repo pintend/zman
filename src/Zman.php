@@ -3,6 +3,7 @@
 namespace Zman;
 
 use Carbon\Carbon;
+use DateTimeInterface;
 use Zman\Moadim\Moadim;
 use Zman\Formats\Formats;
 use Zman\Getters\Getters;
@@ -59,7 +60,7 @@ class Zman extends Carbon
      *
      * @return static
      */
-    public static function instance($date)
+    public static function instance(DateTimeInterface $date): static
     {
         $instance = parent::instance($date);
 

@@ -33,7 +33,7 @@ if (!function_exists('toJewish')) {
      * @param  string|int $month
      * @param  string|int $day
      * @param  string|int $year
-     * @return array
+     * @return string
      */
     function toJewish($month, $day, $year)
     {

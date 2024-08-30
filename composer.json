@@ -24,7 +24,7 @@
     },
     "require": {
         "php": ">=7.1.8",
-        "nesbot/carbon": "^2.49"
+        "nesbot/carbon": "^3.8"
     },
     "require-dev": {
         "spatie/phpunit-watcher": "^1.23",
@@ -39,5 +39,7 @@
         "test": "vendor/bin/phpunit",
         "test-watch": "vendor/bin/phpunit-watcher watch",
         "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
-    }
+    },
+    "minimum-stability": "stable",
+    "version": "2.0.0-stable"
 }
