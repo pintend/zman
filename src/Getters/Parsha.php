@@ -72,7 +72,7 @@ trait Parsha
         if (!$this->isJewishLeapYear()) {
             $firstDayOfPesach = self::firstDayOfPesach($this->jewishYear, $galus);
             $shabbosHagadol = $firstDayOfPesach->copy()->subWeek()->addDays(6 - $firstDayOfPesach->dayOfWeek);
-            $weeksBetweenShabbosBereishisAndShabbosHagadol = $shabbosHagadol->diffInWeeks($shabbosBereishis);
+            $weeksBetweenShabbosBereishisAndShabbosHagadol = (int) $shabbosHagadol->diffInWeeks($shabbosBereishis, absolute: true);
 
             $offset += $shabbos > 21 && $weeksBetweenShabbosBereishisAndShabbosHagadol < 23 ? 1 : 0;
             $offset += $shabbos >= 27 ? 1 : 0;

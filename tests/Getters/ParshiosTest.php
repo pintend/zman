@@ -284,7 +284,7 @@ class ParshiosTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals('Shmini', Zman::parse('04/04/21')->parsha);
     }
 
-    /** @test */
+    #[Test]
     public function vayakheil_pekudei_in_longer_year_issues_33()
     {
         $this->assertEquals('Vayakheil', Zman::parse('03/22/2025')->parsha);
